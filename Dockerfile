@@ -6,5 +6,5 @@ EXPOSE 53/udp
 #ADD https://raw.githubusercontent.com/Pugmatt/BedrockConnect/master/scripts/install-bind.sh /setup.sh
 COPY . .
 #RUN apt update && apt install bind9 dnsutils -y && chmod +x /setup.sh
-RUN /install-bind.sh
-CMD /setup.sh ${BEDROCK_CONNECT_IP} ${NAMESERVER_IP}
+RUN chmod +x /install-bind.sh
+CMD /install-bind.sh ${BEDROCK_CONNECT_IP} ${NAMESERVER_IP}
